@@ -19,9 +19,10 @@ class ExpenseDAO(context: Context) : IExpenseDAO {
         values.put(DataBaseHelper.EXPENSE_NAME, expense.name)
         values.put(DataBaseHelper.AMOUNT, expense.amount)
         values.put(DataBaseHelper.DATE, expense.date)
+        values.put(DataBaseHelper.TYPE_EXPENSE, expense.typeExpense)
 
         try{
-            write.insert(DataBaseHelper.ID_EXPENSE,
+            write.insert(DataBaseHelper.EXPENSE_TABLE,
                 null,
                 values
                 )

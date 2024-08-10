@@ -15,6 +15,7 @@ class DataBaseHelper(context:Context) : SQLiteOpenHelper(context, "Banco.db", nu
        const val EXPENSE_NAME = "name"
        const val AMOUNT = "amount"
        const val DATE = "date"
+       const val TYPE_EXPENSE = "type_expense"
 
    }
 
@@ -25,7 +26,8 @@ class DataBaseHelper(context:Context) : SQLiteOpenHelper(context, "Banco.db", nu
             "$ID_EXPENSE INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,"+
             "$EXPENSE_NAME VARCHAR(55)," +
             "$AMOUNT NOT NULL,"+
-            "$DATE TEXT" +
+            "$DATE NOT NULL DEFAULT CURRENT_TIMESTAMP," +
+            "$TYPE_EXPENSE TEXT" +
             ");")
 
         //Padrão para ter mais segurança para nao errar o nome das tabelas e colunas nos comandos
